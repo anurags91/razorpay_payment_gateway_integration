@@ -33,42 +33,44 @@ const Products = ({ data }) => {
     rzp.open();
   };
   return (
-    <div
-      className="p-5 grid gap-6 
+    <>
+      <div
+        className="p-5 grid gap-6 
                 grid-cols-1 
                 sm:grid-cols-2 
                 md:grid-cols-3 
                 lg:grid-cols-4"
-    >
-      {data.map((item) => (
-        <div
-          className="bg-white rounded-2xl shadow-md overflow-hidden"
-          key={item.id}
-        >
-          <img
-            className="w-full h-56 object-cover"
-            src={item.image}
-            alt="Shoes"
-          />
-          <div className="p-5">
-            <h2 className="text-xl font-semibold text-gray-800 mb-2">
-              {item.title}
-            </h2>
+      >
+        {data.map((item) => (
+          <div
+            className="bg-white rounded-2xl shadow-md overflow-hidden"
+            key={item.id}
+          >
+            <img
+              className="w-full h-56 object-cover"
+              src={item.image}
+              alt="Shoes"
+            />
+            <div className="p-5">
+              <h2 className="text-xl font-semibold text-gray-800 mb-2">
+                {item.title}
+              </h2>
 
-            <p className="text-gray-600 text-sm mb-4">Price {item.price}</p>
+              <p className="text-gray-600 text-sm mb-4">Price {item.price}</p>
 
-            <div className="flex justify-end">
-              <button
-                className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition duration-200 cursor-pointer"
-                onClick={() => checkoutHandler(item.price)}
-              >
-                Buy Now
-              </button>
+              <div className="flex justify-end">
+                <button
+                  className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition duration-200 cursor-pointer"
+                  onClick={() => checkoutHandler(item.price)}
+                >
+                  Buy Now
+                </button>
+              </div>
             </div>
           </div>
-        </div>
-      ))}
-    </div>
+        ))}
+      </div>
+    </>
   );
 };
 
