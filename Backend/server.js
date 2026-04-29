@@ -2,7 +2,7 @@ import app from "./src/app.js";
 import dotenv from "dotenv";
 import Razorpay from "razorpay";
 
-dotenv.config({ path: "src/config/config.env" });
+dotenv.config({ path: "config.env" });
 
 export const instance = new Razorpay({
   key_id: process.env.RAZOR_KEY,
@@ -10,8 +10,6 @@ export const instance = new Razorpay({
 });
 
 // instance.orders.all().then(console.log).catch(console.error);
-
-
 
 app.listen(process.env.PORT, () => {
   console.log(`Server is running on port ${process.env.PORT}`);
